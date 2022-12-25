@@ -57,16 +57,8 @@ Math::Libgsl::Series - An interface to libgsl, the Gnu Scientific Library - Seri
 
 use Math::Libgsl::Series;
 
-=end code
-
-=head1 SYNOPSIS
-
-=begin code :lang<raku>
-
-use Math::Libgsl::Series;
-
-my Math::Libgsl::Series $s .= new: N;
 constant \N = 20;
+my Math::Libgsl::Series $s .= new: N;
 my @array := Array[Num].new;
 (^N).map: -> $n { my $np1 = $n + 1e0; @array[$n] = 1e0 / ($np1 * $np1) }
 my ($sum, $err) = $s.levin-accel: @array;
